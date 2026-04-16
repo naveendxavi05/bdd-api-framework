@@ -45,7 +45,7 @@ jobs:
         run: |
           mvn verify sonar:sonar \
             -DskipTests \
-            -Dsonar.projectKey=${{ secrets.SONAR_PROJECT_KEY }} \
-            -Dsonar.organization=${{ secrets.SONAR_ORG }} \
+            -Dsonar.projectKey=naveendxavi05_bdd-api-framework \
+            -Dsonar.organization=naveendxavi05 \
             -Dsonar.host.url=https://sonarcloud.io \
             -Dsonar.token=${{ secrets.SONAR_TOKEN }}
