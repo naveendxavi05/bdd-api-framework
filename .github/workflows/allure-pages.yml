@@ -42,6 +42,7 @@ jobs:
 
       - name: Deploy to GitHub Pages
         run: |
+          sudo chown -R runner:runner allure-history
           cd allure-history
           git init
           git config user.name "github-actions[bot]"
