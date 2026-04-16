@@ -41,9 +41,13 @@ jobs:
           keep_reports: 20
 
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_branch: gh-pages
-          publish_dir: allure-history
-          force_orphan: true
+        run: |
+          cd allure-history
+          git init
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git checkout --orphan gh-pages
+          git add .
+          git commit -m "deploy: Allure report $(date +'%Y-%m-%d %H:%M:%S')"
+          git remote add origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/naveendxavi05/bdd-api-framework.git
+          git push origin gh-pages --force
