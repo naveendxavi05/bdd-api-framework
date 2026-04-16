@@ -1,0 +1,31 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"  As an admin user
+  I want to generate an auth token
+  So that I can perform secured booking operations","71","Generate token with valid credentials","","Thu Apr 16 09:19:40 UTC 2026","passed","Thu Apr 16 09:19:40 UTC 2026","","Authentication API","Generate token with valid credentials",""
+"  As an admin user
+  I want to manage hotel bookings
+  So that I can create, read, update and delete bookings","54","Create booking with multiple data sets","","Thu Apr 16 09:19:41 UTC 2026","passed","Thu Apr 16 09:19:41 UTC 2026","","Booking API","Create booking with multiple data sets",""
+"  As an admin user
+  I want to manage hotel bookings
+  So that I can create, read, update and delete bookings","118","Get booking by ID","","Thu Apr 16 09:19:41 UTC 2026","passed","Thu Apr 16 09:19:41 UTC 2026","","Booking API","Get booking by ID",""
+"  As an admin user
+  I want to generate an auth token
+  So that I can perform secured booking operations","42","Generate token with invalid credentials","","Thu Apr 16 09:19:40 UTC 2026","passed","Thu Apr 16 09:19:40 UTC 2026","","Authentication API","Generate token with invalid credentials",""
+"  As an admin user
+  I want to manage hotel bookings
+  So that I can create, read, update and delete bookings","401","Get all bookings","","Thu Apr 16 09:19:40 UTC 2026","passed","Thu Apr 16 09:19:41 UTC 2026","","Booking API","Get all bookings",""
+"  As an admin user
+  I want to manage hotel bookings
+  So that I can create, read, update and delete bookings","41","Create booking with multiple data sets","","Thu Apr 16 09:19:41 UTC 2026","passed","Thu Apr 16 09:19:41 UTC 2026","","Booking API","Create booking with multiple data sets",""
+"  As an admin user
+  I want to manage hotel bookings
+  So that I can create, read, update and delete bookings","110","Partially update booking","","Thu Apr 16 09:19:41 UTC 2026","passed","Thu Apr 16 09:19:41 UTC 2026","","Booking API","Partially update booking",""
+"  As an admin user
+  I want to manage hotel bookings
+  So that I can create, read, update and delete bookings","107","Update booking with full payload","","Thu Apr 16 09:19:41 UTC 2026","passed","Thu Apr 16 09:19:41 UTC 2026","","Booking API","Update booking with full payload",""
+"  As an admin user
+  I want to manage hotel bookings
+  So that I can create, read, update and delete bookings","69","Delete booking","","Thu Apr 16 09:19:41 UTC 2026","passed","Thu Apr 16 09:19:41 UTC 2026","","Booking API","Delete booking",""
+"  As an admin user
+  I want to manage hotel bookings
+  So that I can create, read, update and delete bookings","57","Create booking with multiple data sets","","Thu Apr 16 09:19:41 UTC 2026","passed","Thu Apr 16 09:19:41 UTC 2026","","Booking API","Create booking with multiple data sets",""

@@ -1,0 +1,1 @@
+{"total":2,"items":[{"uid":"2819621b410c71fff9a7cc0252476750","name":"Booking API","statistic":{"failed":0,"broken":0,"skipped":0,"passed":6,"unknown":0,"total":6}},{"uid":"48047710e0c74194d0a6d70997d4933d","name":"Authentication API","statistic":{"failed":0,"broken":0,"skipped":0,"passed":2,"unknown":0,"total":2}}]}
