@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="BDD API Framework Suite" verbose="1" thread-count="1">
+
+    <test name="BDD API Tests">
+        <classes>
+            <class name="com.bdd.runner.TestRunner"/>
+        </classes>
+    </test>
+
+</suite>

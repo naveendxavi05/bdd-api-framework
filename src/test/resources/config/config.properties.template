@@ -1,0 +1,21 @@
+# ──────────────────────────────────────────────
+#  BDD API Framework — Config Template
+#  Copy to config.properties and fill values.
+#  NEVER commit config.properties (see .gitignore)
+# ──────────────────────────────────────────────
+
+# Base URL of the Restful Booker service
+base.url=http://localhost:3001
+
+# Admin credentials for token generation
+admin.username=admin
+admin.password=password123
+
+# SLA threshold — all API calls must respond within this value
+sla.response.time.ms=500
+
+# Environment label (local | ci | staging)
+env=local
+
+# Allure results output directory
+allure.results.dir=target/allure-results
