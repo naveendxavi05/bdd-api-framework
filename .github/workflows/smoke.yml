@@ -1,0 +1,66 @@
+name: 1 — Smoke Tests
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  smoke:
+    name: Run Smoke Tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Java 25
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+
+      - name: Cache Maven packages
+        uses: actions/cache@v4
+        with:
+          path: ~/.m2
+          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+          restore-keys: ${{ runner.os }}-maven-
+
+      - name: Start Restful Booker
+        run: |
+          docker run -d --name restful-booker \
+            -p 3001:3001 \
+            ankurpshah/restful-booker:latest
+
+      - name: Wait for Restful Booker health check
+        run: |
+          echo "Waiting for Restful Booker..."
+          for i in {1..15}; do
+            STATUS=$(wget -q -O- http://localhost:3001/ping --server-response 2>&1 | grep "HTTP/" | awk '{print $2}')
+            if [ "$STATUS" = "201" ]; then
+              echo "Restful Booker is up!"
+              exit 0
+            fi
+            echo "Attempt $i — not ready yet, waiting 3s..."
+            sleep 3
+          done
+          echo "Restful Booker failed to start"
+          exit 1
+
+      - name: Run Smoke Tests
+        run: |
+          mvn test \
+            -Dcucumber.filter.tags="@smoke" \
+            -Dbase.url=http://localhost:3001 \
+            -q
+
+      - name: Upload Allure Results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: smoke-allure-results
+          path: target/allure-results
+          retention-days: 7
